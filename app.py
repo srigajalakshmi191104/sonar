@@ -9,7 +9,6 @@ from superagentx.handler.decorators import tool
 
 logger = logging.getLogger(__name__)
 
-
 class SonarQubeHandler(BaseHandler):
 
     def __init__(self):
