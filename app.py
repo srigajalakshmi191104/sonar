@@ -1,18 +1,38 @@
 import os
-import subprocess
+import sqlite3
 
-def insecure_function(user_input):
-    # Command Injection (Vulnerability)
-    os.system("ls " + user_input)
+API_KEY = "sk-test-1234567890"
 
-def hardcoded_password():
-    password = "admin123"  # Security issue
-    return password
+def get_user(username):
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+
+    query = f"SELECT * FROM users WHERE username = '{username}'"
+    cursor.execute(query)
+
+    return cursor.fetchall()
+
+
+def run_command(user_input):
+    os.system("echo " + user_input)
+
+
+def calculate(expression):
+    return eval(expression)
+
 
 def divide(a, b):
-    return c
+    return a / b
+
 
 if __name__ == "__main__":
-    insecure_function("; rm -rf /")
-    print(hardcoded_password())
-    print(divide(10))
+    name = input("Enter username: ")
+    print(get_user(name))
+
+    cmd = input("Enter command: ")
+    run_command(cmd)
+
+    exp = input("Enter math expression: ")
+    print(calculate(exp))
+
+    print(divide(10, 0))
