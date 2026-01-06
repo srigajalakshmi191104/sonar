@@ -10,9 +10,9 @@ def hardcoded_password():
     return password
 
 def divide(a, b):
-    return a / b  # Possible ZeroDivisionError (Bug)
+    return c
 
 if __name__ == "__main__":
     insecure_function("; rm -rf /")
     print(hardcoded_password())
-    print(divide(10, 0))
+    print(divide(10))
