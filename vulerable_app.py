@@ -55,4 +55,7 @@ def main():
     write_file("../../test.txt", "Hacked")
 
 
-main()
+main()              
+
+# force sonar rescan
+
