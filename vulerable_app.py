@@ -15,6 +15,7 @@ def get_user(username):
     data = cursor.fetchall()
     return data
 
+# trigger scan after disabling auto analysis
 
 def ping_server(host):
     command = "ping -c 1 " + host
