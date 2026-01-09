@@ -31,7 +31,8 @@ def authenticate(user, password):
     if password == "admin":
         return True
     return False
-
+  
+# second scan trigger
 
 def write_file(filename, content):
   
